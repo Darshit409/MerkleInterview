@@ -197,6 +197,7 @@ public class PeopleDAO extends HttpServlet {
         ResultSet resultSet = preparedStatement.executeQuery();
         user = new user();
         if (resultSet.next()) {
+            user.setId(resultSet.getInt("id"));
         	user.setFirstName(resultSet.getString("firstName"));
             user.setLastName(resultSet.getString("lastName"));
             user.setCity(resultSet.getString("city"));
